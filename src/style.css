@@ -1,0 +1,73 @@
+.input {
+  border: 1px solid red;
+}
+.show {
+  /* 调用动画 */
+  animation: show-item 0.2s ease-in forwards; /* forwards 使动画完成后保留最后时刻的样式 */
+}
+.hide {
+  /* 调用动画 */
+  animation: hide-item 0.2s ease-in forwards; /* forwards 使动画完成后保留最后时刻的样式 */
+}
+
+/* 定义动画 */
+@keyframes hide-item {
+  0% {
+    opacity: 1;
+    color: red;
+  }
+  50% {
+    opacity: 0.5;
+    color: green;
+  }
+  100% {
+    opacity: 0;
+    color: blue;
+  }
+}
+@keyframes show-item {
+  0% {
+    opacity: 0;
+    color: red;
+  }
+  50% {
+    opacity: 0.5;
+    color: green;
+  }
+  100% {
+    opacity: 1;
+    color: blue;
+  }
+}
+
+/* CSSTransition 挂载的样式名 */
+/* 入场动画 */
+/* 进入前 */
+.fade-enter,
+.fade-appear {
+  opacity: 0;
+}
+/* 进入中 */
+.fade-enter-active,
+.fade-appear-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+/* 进入后, 最终样式 */
+.fade-enter-done {
+  opacity: 1;
+}
+/* 出场动画 */
+/* 出场前 */
+.fade-exit {
+  opacity: 1;
+}
+/* 出场中 */
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+/* 出场后, 最终样式 */
+.fade-exit-done {
+  opacity: 0;
+}
