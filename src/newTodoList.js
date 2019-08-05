@@ -13,9 +13,10 @@ import {
   changeInputValue,
   addTodoItem,
   deleteTodoItem,
-  getTodoList
+  getInitList
 } from "./store/actionCreators";
 import TodoListUI from "./todoListUI";
+// import axios from "axios";
 
 class newTodoList extends Component {
   constructor(props) {
@@ -45,8 +46,17 @@ class newTodoList extends Component {
   }
 
   componentDidMount() {
-    const action = getTodoList();
+    const action = getInitList();
     store.dispatch(action);
+    // axios
+    //   .get("/api/todolist")
+    //   .then(res => {
+    //     const action = initTodoList(res.data);
+    //     store.dispatch(action);
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
   }
 
   // 输入框改变
